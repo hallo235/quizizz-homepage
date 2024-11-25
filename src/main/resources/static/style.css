@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #141a32; /* Dark background */
+    color: #f0f0f0; /* Light text */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1c2541; /* Dark sidebar background */
+    padding: 20px;
+    border-right: 1px solid #232d52;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar i {
+    margin-right: 10px;
+    color: #f0f0f0; /* Light icon color */
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    background-color: #2e3a61; /* Darker input background */
+    border: none;
+    border-radius: 5px;
+    color: #f0f0f0; /* Light input text */
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sidebar nav ul li a.active {
+    background-color: #343d68;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.start-here ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.start-here ul li {
+    margin: 10px 0;
+}
+
+.start-here ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 14px;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.upgrade-btn {
+    background-color: #ffbe00;
+    color: #141a32; /* Dark button text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffbe00;
+}
+
+.flashcards, .textbooks, .questions {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+.card-container, .textbook-list {
+    display: flex;
+    gap: 20px;
+}
+
+.card, .textbook {
+    background-color: #1f2945; /* Dark card background */
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #f0f0f0; /* Light card text */
+    transition: background-color 0.3s ease;
+}
+
+.card:hover, .textbook:hover {
+    background-color: #2e3a61; /* Hover effect */
+}
+
+.card p, .textbook p {
+    margin-bottom: 10px;
+}
+
+.textbook img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.question {
+    background-color: #1f2945;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: none;
+    color: #f0f0f0;
+}
+
+.question p {
+    color: #f0f0f0;
+}
+/* Existing styles remain unchanged */
+
+.card-container, .textbook-list {
+    display: grid; /* Switch to grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 cards per row */
+    gap: 20px; /* Adjust gap between the cards */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 1024px) {
+    .card-container, .textbook-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container, .textbook-list {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+}
+
